@@ -1,5 +1,5 @@
 import Item from './Item'
-import cardapio from './itens.json'
+import cardapio from 'data/cardapio.json'
 import styles from './Itens.module.scss'
 import { useState, useEffect } from 'react'
 
@@ -50,7 +50,7 @@ export default function Itens({ busca, filtro, ordenador }: Props) {
             (item) => testaBusca(item.title) && testaFiltro(item.category.id)
         )
         setLista(ordenar(novaLista))
-    }, [busca, filtro, ordenar])
+    }, [busca, filtro, ordenador])
 
     return (
         <div className={styles.itens}>
